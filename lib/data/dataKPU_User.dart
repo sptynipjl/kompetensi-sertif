@@ -18,7 +18,7 @@ class DataPenggunaKPU extends ChangeNotifier {
   // userData
   List<DataKPU> _userData = [];
 
-  // Get Elektronik List
+  // Get Data List
   List<DataKPU> get dataPenggunaKPU => _data;
 
   // Get userData

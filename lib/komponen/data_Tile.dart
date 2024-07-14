@@ -35,8 +35,8 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Heading 'Nama Ormawa'
-            const SizedBox(height: 16),
+            // Heading 
+            const SizedBox(height: 10),
             Text(
               'NIK',
               style: TextStyle(
@@ -47,7 +47,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Display nikcontroller
-            const SizedBox(height: 6),
             Text(
               widget.nik,
               style: TextStyle(
@@ -58,7 +57,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Heading 'Nama'
-            const SizedBox(height: 16),
             Text(
               'Nama Lengkap',
               style: TextStyle(
@@ -68,7 +66,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Display namaLengkapcontroller
-            const SizedBox(height: 6),
             Text(
               widget.nama,
               style: TextStyle(
@@ -79,7 +76,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Heading 'Jenis Kelamin'
-            const SizedBox(height: 16),
             Text(
               'Jenis Kelamin',
               style: TextStyle(
@@ -88,7 +84,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Display jeniskelamincontroller
-            const SizedBox(height: 6),
             Text(
               widget.jenisKelamin,
               style: TextStyle(
@@ -99,7 +94,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Heading 'no HP'
-            const SizedBox(height: 12),
             Text(
               'Nomor Handphone',
               style: TextStyle(
@@ -108,7 +102,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Display noHPcontroller
-            const SizedBox(height: 6),
             Text(
               widget.noHp,
               style: TextStyle(
@@ -119,7 +112,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Heading 'Tanggal'
-            const SizedBox(height: 12),
             Text(
               'Tanggal Lahir',
               style: TextStyle(
@@ -128,7 +120,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Display tanggalLahircontroller
-            const SizedBox(height: 6),
             Text(
               widget.tanggal,
               style: TextStyle(
@@ -139,7 +130,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Heading 'Alamat'
-            const SizedBox(height: 12),
             Text(
               'Alamat',
               style: TextStyle(
@@ -148,7 +138,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Display alamatcontroller
-            const SizedBox(height: 6),
             Text(
               widget.alamat,
               style: TextStyle(
@@ -159,7 +148,6 @@ class _DataPemilihTileState extends State<DataPemilihTile> {
             ),
 
             // Heading 'Gambar'
-            const SizedBox(height: 12),
             Text(
               'Gambar',
               style: TextStyle(

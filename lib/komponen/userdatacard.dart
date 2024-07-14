@@ -24,16 +24,6 @@ class DataUserCard extends StatefulWidget {
 }
 
 class _DataUserCardState extends State<DataUserCard> {
-  int hexColor(String color) {
-    //adding prefix
-    // ignore: prefer_interpolation_to_compose_strings
-    String newColor = '0xff' + color;
-    //removing # sign
-    newColor = newColor.replaceAll('#', '');
-    // convert into integer
-    int finalColor = int.parse(newColor);
-    return finalColor;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +31,7 @@ class _DataUserCardState extends State<DataUserCard> {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       child: Container(
         decoration: BoxDecoration(
-          color: Color(hexColor('5B9BBE')),
+          color: const Color.fromARGB(255, 107, 35, 30),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Column(
@@ -55,7 +45,7 @@ class _DataUserCardState extends State<DataUserCard> {
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
-                  color: Color(hexColor('FFFFFF')),
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -72,7 +62,7 @@ class _DataUserCardState extends State<DataUserCard> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Color(hexColor('FFFFFF')),
+                            color: Colors.white,
                           ),
                         ),
                         const SizedBox(height: 8, width: 45),
@@ -81,7 +71,7 @@ class _DataUserCardState extends State<DataUserCard> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.normal,
-                            color: Color(hexColor('FFFFFF')),
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -96,7 +86,7 @@ class _DataUserCardState extends State<DataUserCard> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Color(hexColor('FFFFFF')),
+                            color: Colors.white,
                           ),
                         ),
                         const SizedBox(height: 8, width: 26),
@@ -105,7 +95,7 @@ class _DataUserCardState extends State<DataUserCard> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.normal,
-                            color: Color(hexColor('FFFFFF')),
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -120,7 +110,7 @@ class _DataUserCardState extends State<DataUserCard> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Color(hexColor('FFFFFF')),
+                            color: Colors.white,
                           ),
                         ),
                         const SizedBox(height: 8, width: 20),
@@ -129,7 +119,7 @@ class _DataUserCardState extends State<DataUserCard> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.normal,
-                            color: Color(hexColor('FFFFFF')),
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -146,7 +136,7 @@ class _DataUserCardState extends State<DataUserCard> {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Color(hexColor('FFFFFF')),
+                            color: Colors.white,
                           ),
                         ),
                         const SizedBox(height: 8, width: 22),
@@ -157,7 +147,7 @@ class _DataUserCardState extends State<DataUserCard> {
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.normal,
-                                color: Color(hexColor('FFFFFF')),
+                                color: Colors.white,
                               ),
                             ),
                             ],
