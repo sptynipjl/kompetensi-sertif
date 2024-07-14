@@ -25,7 +25,7 @@ class DefaultButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(26),
       decoration: BoxDecoration(
-        color: Color(hexColor('#5B9BBE')),
+        color: const Color.fromARGB(255, 107, 35, 30),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Center(
@@ -34,7 +34,7 @@ class DefaultButton extends StatelessWidget {
             actionName,
             style: GoogleFonts.poppins(
               fontSize: 16,
-              color: Color(hexColor('FFFFFF')),
+              color: Colors.white,
               fontWeight: FontWeight.w400,
             ),
           ),

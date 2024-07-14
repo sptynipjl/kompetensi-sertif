@@ -16,7 +16,6 @@ import 'homepage.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:flutter/services.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class FormEntry extends StatefulWidget {
   final DataKPU dataKPU;
@@ -30,11 +29,7 @@ class FormEntry extends StatefulWidget {
 }
 
 class _FormEntryState extends State<FormEntry> {
-  int hexColor(String color) {
-    String newColor = '0xff' + color.replaceAll('#', '');
-    int finalColor = int.parse(newColor);
-    return finalColor;
-  }
+  
 
   File? _selectedImages;
 
@@ -81,7 +76,7 @@ class _FormEntryState extends State<FormEntry> {
       List<Placemark> placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
       Placemark tempat = placemarks[0];
       setState(() {
-        alamat.text = '${tempat.street}, ${tempat.subLocality}, ${tempat.locality}, ${tempat.administrativeArea}, ${tempat.country}';
+        alamat.text = '${tempat.subLocality}, ${tempat.locality}, ${tempat.administrativeArea}, ${tempat.country}';
       });
 
       // Salin alamat ke clipboard (opsional)
@@ -122,7 +117,7 @@ class _FormEntryState extends State<FormEntry> {
     });
   }
 
-  // Pilih gambar dari galery function
+  // Ambil gambar dari kamera
   Future _ambilGambar() async {
     // var status = await Permission.camera.status;
     // if (!status.isGranted) {
@@ -137,10 +132,6 @@ class _FormEntryState extends State<FormEntry> {
     });
   }
 
-  // Pilih gambar dari camera function
-  // Future _pilihDariGalery() async {
-  //   await ImagePicker().pickImage(source: ImageSource.gallery);
-  // }
 
   // Initialise firestore
   FireStoreDatabase database = FireStoreDatabase();
@@ -188,7 +179,7 @@ class _FormEntryState extends State<FormEntry> {
                       },
                       icon: Icon(
                         Icons.arrow_back_ios_rounded,
-                        color: Color(hexColor('#D43300')),
+                        color: const Color.fromARGB(255, 107, 35, 30),
                       ),
                     ),
                   ),
@@ -199,7 +190,7 @@ class _FormEntryState extends State<FormEntry> {
                       style: GoogleFonts.poppins(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        color: Color(hexColor('5B9BBE')),
+                        color: const Color.fromARGB(255, 107, 35, 30),
                       ),
                     ),
                   ),
@@ -213,7 +204,7 @@ class _FormEntryState extends State<FormEntry> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Color(hexColor('5B9BBE')),
+                
                   ),
                 ),
               ),
@@ -230,7 +221,7 @@ class _FormEntryState extends State<FormEntry> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Color(hexColor('5B9BBE')),
+                
                   ),
                 ),
               ),
@@ -247,7 +238,7 @@ class _FormEntryState extends State<FormEntry> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Color(hexColor('5B9BBE')),
+                    
                   ),
                 ),
               ),
@@ -264,7 +255,7 @@ class _FormEntryState extends State<FormEntry> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Color(hexColor('5B9BBE')),
+                   
                   ),
                 ),
               ),
@@ -275,7 +266,7 @@ class _FormEntryState extends State<FormEntry> {
                   value: dropDownvalue,
                   icon: Icon(
                     Icons.arrow_drop_down,
-                    color: Color(hexColor('#5B9BBE')),
+                    color: Colors.black,
                   ),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -283,7 +274,7 @@ class _FormEntryState extends State<FormEntry> {
                     ),
                   ),
                   style: TextStyle(
-                    color: Color(hexColor('#5B9BBE')),
+                    color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                   onChanged: (String? newValue) {
@@ -313,7 +304,7 @@ class _FormEntryState extends State<FormEntry> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Color(hexColor('5B9BBE')),
+
                   ),
                 ),
               ),
@@ -332,7 +323,6 @@ class _FormEntryState extends State<FormEntry> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Color(hexColor('5B9BBE')),
                   ),
                 ),
               ),
@@ -348,8 +338,9 @@ class _FormEntryState extends State<FormEntry> {
               Padding(
                 padding: const EdgeInsets.only(left: 216),
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 107, 35, 30)),
                   onPressed: _getCurrentLocation,
-                  child: Text('Baca Lokasi'),
+                  child: Text('Baca Lokasi',style: TextStyle(color: Colors.white),),
                 ),
               ),
 
@@ -362,7 +353,6 @@ class _FormEntryState extends State<FormEntry> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Color(hexColor('5B9BBE')),
                   ),
                 ),
               ),
@@ -377,7 +367,7 @@ class _FormEntryState extends State<FormEntry> {
                       onPressed: () {
                         _pilihDariGalery();
                       },
-                      color: Color(hexColor('#5B9BBE')),
+                      color: const Color.fromARGB(255, 107, 35, 30),
                       padding:
                           EdgeInsets.symmetric(horizontal: 40, vertical: 12),
                       child: const Row(
@@ -405,7 +395,7 @@ class _FormEntryState extends State<FormEntry> {
                       onPressed: () {
                         _ambilGambar();
                       },
-                      color: Color(hexColor('#5B9BBE')),
+                      color: const Color.fromARGB(255, 107, 35, 30),
                       padding:
                           EdgeInsets.symmetric(horizontal: 40, vertical: 12),
                       child: const Row(
@@ -441,9 +431,10 @@ class _FormEntryState extends State<FormEntry> {
               // Save button
               const SizedBox(height: 64),
               SubmitButton(
-                actionName: 'Simpan',
+                actionName: 'Submit Data',
                 onTap: () => addUserData(),
               ),
+              const SizedBox(height: 20),
             ],
           ),
         ),

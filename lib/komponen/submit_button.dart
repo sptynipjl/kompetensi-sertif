@@ -19,8 +19,9 @@ class SubmitButton extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         margin: const EdgeInsets.symmetric(horizontal: 24),
         decoration: BoxDecoration(
-          color: Color(hexColor("#D43300")),
+          color: const Color.fromARGB(255, 18, 117, 22),
           borderRadius: BorderRadius.circular(8),
+          
         ),
         child: Center(
           child: Text(
@@ -37,12 +38,3 @@ class SubmitButton extends StatelessWidget {
   }
 }
 
-int hexColor(String color) {
-  //adding prefix
-  String newColor = '0xff$color';
-  //removing # sign
-  newColor = newColor.replaceAll('#', '');
-  // convert into integer
-  int finalColor = int.parse(newColor);
-  return finalColor;
-}

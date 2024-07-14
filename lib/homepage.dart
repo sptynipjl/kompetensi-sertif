@@ -15,16 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int hexColor(String color) {
-    //adding prefix
-    // ignore: prefer_interpolation_to_compose_strings
-    String newColor = '0xff' + color;
-    //removing # sign
-    newColor = newColor.replaceAll('#', '');
-    // convert into integer
-    int finalColor = int.parse(newColor);
-    return finalColor;
-  }
+
 
   final nik = TextEditingController();
   final nama = TextEditingController();
@@ -36,26 +27,40 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(hexColor('#FFFFFF')),
+      backgroundColor: Colors.white,
       body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Heading 'KPU'
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 164, vertical: 62),
-            child: Text('K P U',
-                style: GoogleFonts.poppins(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Color(hexColor('5B9BBE')),
-                )),
+            padding: const EdgeInsets.all(45.0),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            
+                children: [
+                  Image.asset(
+                    'lib/images/logoKPU.png', // Path to your logo
+                    width: 80, // Adjust size as needed
+                    height: 80, // Adjust size as needed
+                  ),
+                  
+                  Text('K P U',
+                      style: GoogleFonts.poppins(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      )),
+                ],
+              ),
           ),
+          
 
           // Information Button
-          const SizedBox(height: 2),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 107, 35, 30)),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -71,6 +76,7 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 107, 35, 30)),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -99,6 +105,7 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 107, 35, 30)),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -116,6 +123,7 @@ class _HomePageState extends State<HomePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 107, 35, 30)),
               onPressed: () {
                 Navigator.push(
                   context,

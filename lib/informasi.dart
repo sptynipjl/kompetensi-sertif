@@ -13,16 +13,6 @@ import 'package:google_fonts/google_fonts.dart';
 class Information extends StatelessWidget {
   Information({super.key});
 
-  int hexColor(String color) {
-    //adding prefix
-    // ignore: prefer_interpolation_to_compose_strings
-    String newColor = '0xff' + color;
-    //removing # sign
-    newColor = newColor.replaceAll('#', '');
-    // convert into integer
-    int finalColor = int.parse(newColor);
-    return finalColor;
-  }
 
   void backToHome() {}
 
@@ -32,7 +22,7 @@ class Information extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer2<DataPenggunaKPU, FireStoreDatabase>(
       builder: ((context, value, fireStoreDBValue, child) => Scaffold(
-            backgroundColor: Color(hexColor('#FFFFFF')),
+            backgroundColor: Colors.white,
             body: SafeArea(
               child: Column(
                 children: [
@@ -53,7 +43,7 @@ class Information extends StatelessWidget {
                           },
                           icon: Icon(
                             Icons.arrow_back_ios_rounded,
-                            color: Color(hexColor('#D43300')),
+                            color: Colors.red,
                           ),
                         ),
                       ),
@@ -64,7 +54,7 @@ class Information extends StatelessWidget {
                             style: GoogleFonts.poppins(
                               fontSize: 28,
                               fontWeight: FontWeight.w600,
-                              color: Color(hexColor('5B9BBE')),
+                              color: const Color.fromARGB(255, 107, 35, 30),
                             )),
                       ),
                     ],

@@ -10,17 +10,6 @@ class TextFields extends StatelessWidget {
     required this.controller,
   });
 
-  int hexColor(String color) {
-    //adding prefix
-    // ignore: prefer_interpolation_to_compose_strings
-    String newColor = '0xff' + color;
-    //removing # sign
-    newColor = newColor.replaceAll('#', '');
-    // convert into integer
-    int finalColor = int.parse(newColor);
-    return finalColor;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,15 +22,15 @@ class TextFields extends StatelessWidget {
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(horizontal: 24),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(hexColor('5B9BBE'))),
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 107, 35, 30)),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  fillColor: Color(hexColor('FFFFFF')),
+                  fillColor: Colors.white,
                   filled: true,
                   hintText: actionText,
                   hintStyle: TextStyle(
                     fontSize: 16,
-                    color: Color(hexColor('5B9BBE')),
+                    color: Colors.grey,
                   )),
             ),
           ),
